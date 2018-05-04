@@ -1,0 +1,33 @@
+{
+  "name": "project-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aguid": "^2.0.0",
+    "as-table": "^1.0.32",
+    "axios": "^0.18.0",
+    "bcrypt": "^2.0.1",
+    "chalk": "^2.4.1",
+    "hapi": "^17.4.0",
+    "hapi-auth-jwt2": "^8.1.0",
+    "hapi-login": "^1.2.2",
+    "joi": "^13.2.0",
+    "lodash": "^4.17.10",
+    "password-prompt": "^1.0.4",
+    "sequelize": "^4.37.6",
+    "vision": "^5.3.2",
+    "vorpal": "^1.12.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.1.1",
+    "nyc": "^11.7.1",
+    "sqlite3": "^4.0.0"
+  }
+}

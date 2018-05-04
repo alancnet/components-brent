@@ -1,0 +1,4 @@
+node_modules/
+project.db
+.nyc_output/
+.vscode/
