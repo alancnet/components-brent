@@ -16,6 +16,7 @@ module.exports = {
     host: null,
     port: null,
     storage: 'project.db',
-    operatorsAliases: false
+    operatorsAliases: false,
+    logging: false
   }
 }

@@ -1,0 +1,8 @@
+require('./components/home-area')
+require('./components/login-page')
+require('./components/test-page')
+require('./components/user-area')
+require('./components/home-page')
+require('./components/dashboard-page')
+require('./components/user-pages')
+require('./api-service')

@@ -1,0 +1,37 @@
+body,
+ng-view,
+ng-view > *,
+app-user-area,
+app-home-area
+{
+  display: flex;
+  flex-direction: row;
+  flex-grow: 100
+}
+
+app-home-area {
+  .logo-container {
+    // padding-top: 10em;
+    padding-bottom: 5em;
+    text-align: center;
+  }
+  .logo {
+    max-width: 20em;
+  }
+  .home-content {
+    max-width: 400px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+md-sidenav {
+  .logo-container {
+    padding-top: 1em;
+    padding-bottom: 2em;
+    text-align: center;
+  }
+  .logo {
+    max-width: 80%;
+  }
+}

@@ -27,9 +27,7 @@ const main = async () => {
   })
 
   vorpal.command('server', 'Runs the web server')
-  .action(() => new Promise(() => {
-    server.init()
-  }))
+  .action(() => server.start())
 
   vorpal.delimiter('project>')
   if (process.argv.length > 2) {

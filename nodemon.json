@@ -1,0 +1,19 @@
+{
+  "ignore": [
+    ".git",
+    "node_modules/**/node_modules",
+    "public/**"
+  ],
+  "watch": [
+    "test/",
+    "lib/",
+    "app/",
+    "bin/",
+    "config.js",
+    "webpack.config.js"
+  ],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "js,json,html,css,scss"
+}
