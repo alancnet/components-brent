@@ -1,8 +1,10 @@
 const crudPages = require('./crud-pages')
 
 crudPages({
-  typeName: 'User',
-  typePlural: 'Users',
+  titleName: 'User',
+  titlePlural: 'Users',
+  pascalName: 'User',
+  pascalPlural: 'Users',
   camelName: 'user',
   camelPlural: 'users',
   snakeName: 'user',
@@ -10,19 +12,20 @@ crudPages({
   apiPrefix: '/api/users',
   columns: [
     {
-      fieldName: 'Name',
+      titleName: 'Name',
       camelName: 'name',
       header: html`<th md-column md-order-by="nameToLower"><span>Name</span></th>`,
       cell: html`<td md-cell>{{user.name}}</td>`
     },
     {
-      fieldName: 'Email',
+      titleName: 'Email',
       camelName: 'email'
     },
     {
-      fieldName: 'Password',
+      titleName: 'Password',
       camelName: 'password',
-      type: 'password'
+      type: 'password',
+      inList: false
     }
   ]
 })

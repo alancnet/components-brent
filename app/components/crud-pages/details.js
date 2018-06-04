@@ -1,43 +1,37 @@
 const _ = require('lodash')
 const app = require('../../app')
-const details = ({
-  typeName,
-  typePlural,
-  camelName,
-  camelPlural,
-  paramName,
-  paramPlural,
-  apiPrefix,
-  appPrefix,
-  columns
-}) => {
+/**
+ * @param {CrudPagesOptions} opts 
+ */
+const details = (opts) => {
   const defaultInput = column => html`
     <md-input-container>
-      <label>${column.fieldName}</label>
+      <label>${column.titleName}</label>
       <input type="${column.type || 'text'}" ng-model="model.${raw(column.camelName)}" />
     </md-input-container>
   `
 
-  app.component(`app${typeName}DetailsPage`, {
+  app.component(`app${opts.pascalName}DetailsPage`, {
 
     template: html`
       <app-user-area>
-        <h1>${typeName}</h1>
+        <h1>{{ctrl.isNew ? 'New ${opts.titleName}' : '${opts.titleName} Details'}}</h1>
         <form name="form" ng-submit="ctrl.submit()">
-          ${columns.map(c => c.input || defaultInput(c))}
+          ${opts.columns.map(c => c.input || defaultInput(c))}
 
           <div>
-            <md-button type="submit">Submit</md-button>
+            <md-button type="submit" class="md-raised md-primary">Submit</md-button>
           </div>
 
         </form>
       </app-user-area>
     `,
     controllerAs: 'ctrl',
-    controller: function(api, $scope, $routeParams, $mdToast) {
-      const crud = api.crud(apiPrefix)
+    controller: function(api, $scope, $routeParams, $mdToast, $location) {
+      this.isNew = $routeParams.id === 'new'
+      const crud = api.crud(opts.apiPrefix)
       let original
-      if ($routeParams.id === 'new') {
+      if (this.isNew) {
         original = {}
         $scope.model = Object.create(original)
       } else {
@@ -49,7 +43,7 @@ const details = ({
 
       this.submit = async () => {
         try {
-          if ($routeParams.id === 'new') {
+          if (this.isNew) {
             await crud.create($scope.model)
           } else {
             const obj = {}
@@ -60,10 +54,11 @@ const details = ({
             }
             await crud.update(original.id, obj)
           }
-          $mdToast.showSimple(`${typeName} saved.`)
+          $mdToast.showSimple(`${opts.titleName} saved.`)
+          $location.url(opts.appPrefix)
         } catch (err) {
           console.error(err)
-          $mdToast.showSimple(`Could not save ${typeName}: ${err.message || err}`)
+          $mdToast.showSimple(`Could not save ${opts.titleName}: ${err.message || err}`)
         }
       }
 

@@ -1,6 +1,9 @@
-module.exports = {
+const appIndex = require('./app-index')
+
+module.exports = Object.assign({
   style: require('./style.scss'),
-  genericLogo: require('./generic-logo.svg'),
+  appStyle: require('./app-style.scss'),
+  logo: require('./generic-logo.svg'),
   menuIcon: require('@alancnet/material-design-icons/navigation_ic_menu_48px.svg'),
   userIcon: require('@alancnet/material-design-icons/social_ic_person_48px.svg'),
   addUserIcon: require('@alancnet/material-design-icons/social_ic_person_add_48px.svg'),
@@ -8,5 +11,6 @@ module.exports = {
   createIcon: require('@alancnet/material-design-icons/content_ic_add_48px.svg'),
   editIcon: require('@alancnet/material-design-icons/content_ic_create_48px.svg'),
   deleteIcon: require('@alancnet/material-design-icons/action_ic_delete_48px.svg'),
-  saveIcon: require('@alancnet/material-design-icons/content_ic_save_48px.svg')
-}
+  saveIcon: require('@alancnet/material-design-icons/content_ic_save_48px.svg'),
+  undoIcon: require('@alancnet/material-design-icons/content_ic_undo_48px.svg')
+}, appIndex)

@@ -1,5 +1,5 @@
 const app = require('../app')
-const { genericLogo } = require('../assets')
+const { logo } = require('../assets')
 
 app.component('appHomeArea', {
   transclude: true,
@@ -7,7 +7,7 @@ app.component('appHomeArea', {
     <div style="display: flex; align-items: center; justify-content: center; height: 100%; flex-grow: 100;">
       <div style="flex-basis: auto">
         <div class="logo-container">
-          <img class="logo" src="${genericLogo}" />
+          <img class="logo" src="${logo}" />
         </div>
         <div class="home-content" ng-transclude>
           <!-- content -->

@@ -1,5 +1,4 @@
 const app = require('../app')
-const { genericLogo } = require('../assets')
 
 app.component('appDashboardPage', {
   template: html`

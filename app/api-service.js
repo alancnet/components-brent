@@ -19,6 +19,9 @@ app.service('api', function($http) {
     list: () => api($http.get(`${apiPrefix}`, opts)),
     create: data => api($http.post(`${apiPrefix}`, data, opts)),
     read: id => api($http.get(`${apiPrefix}/${id}`, opts)),
-    update: (id, data) => api($http.put(`${apiPrefix}/${id}`, data, opts))
+    update: (id, data) => api($http.patch(`${apiPrefix}/${id}`, data, opts)),
+    delete: (id) => api($http.delete(`${apiPrefix}/${id}`, opts)),
+    trash: () => api($http.get(`${apiPrefix}/trash`, opts)),
+    undelete: (id) => api($http.delete(`${apiPrefix}/trash/${id}`, opts))
   })
 })

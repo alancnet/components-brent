@@ -1,5 +1,5 @@
 const app = require('../app')
-const { genericLogo, menuIcon, userIcon, dashboardIcon } = require('../assets')
+const { logo, menuIcon, userIcon, dashboardIcon } = require('../assets')
 
 
 app.component('appUserArea', {
@@ -15,19 +15,11 @@ app.component('appUserArea', {
 
         <header>
           <div class="logo-container">
-            <img class="logo" src="${genericLogo}" />
+            <img class="logo" src="${logo}" />
           </div>          
         </header>
 
-        <h3>
-          Intelligence
-        </h3>
-        <md-menu-item>
-          <md-button ng-href="/dashboard">
-            <md-icon md-svg-icon="${dashboardIcon}"></md-icon>
-            Dashboard
-          </md-button>
-        </md-menu-item>
+        <app-user-area-nav></app-user-area-nav>
 
         <h3>
           Administration
