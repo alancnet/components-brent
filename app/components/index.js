@@ -1,8 +1,0 @@
-require('./home-area')
-require('./login-page')
-require('./test-page')
-require('./user-area')
-require('./home-page')
-require('./dashboard-page')
-require('./user-pages')
-require('./app-index')

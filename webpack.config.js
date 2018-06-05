@@ -38,13 +38,13 @@ module.exports = {
         use:['style-loader','css-loader', 'sass-loader']
       },
       {
-        test:/\.(?:svg|eot|woff2|woff|ttf)$/,
+        test:/\.(?:svg|png|eot|woff2|woff|ttf)$/,
         use:['file-loader']
       },
       {
         test:/\.html$/,
         use:['html-loader']
-      },
+      }
     ]
   }
 };
