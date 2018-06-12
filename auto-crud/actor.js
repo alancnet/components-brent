@@ -1,6 +1,3 @@
-/* Example */
-/*
-
 const { register, Sequelize } = require('@alancnet/material-framework/auto-crud')
 
 register({
@@ -29,5 +26,3 @@ register({
     }
   ]
 })
-
-*/

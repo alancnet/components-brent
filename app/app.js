@@ -1,5 +1,5 @@
 const angular = require('angular')
-require('material-framework/app')
+require('@alancnet/material-framework/app')
 const routes = require('./routes')
 
 const app = angular.module('app', ['material-framework'])

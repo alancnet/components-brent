@@ -1,6 +1,6 @@
 const config = require('../config')
-const frameworkConfig = require('material-framework/config')
+const frameworkConfig = require('@alancnet/material-framework/config')
 frameworkConfig.inject(config)
 require('../lib/server')
 require('../lib/database')
-require('material-framework/bin/project')
+require('@alancnet/material-framework/bin/project')

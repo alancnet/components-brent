@@ -68,7 +68,7 @@ overridden, but it is only required to specify one in each case (generally
   - `module.exports` includes exports from the framework.
 
     ```javascript
-    const {database} = require('material-framework/server')
+    const {database} = require('@alancnet/material-framework/server')
     const WildBerry = require('./wild-berry')
 
     module.exports = Object.assign(database, {
@@ -82,7 +82,7 @@ overridden, but it is only required to specify one in each case (generally
   - `controller` accepts case parameter overrides, otherwise they will derive from `Type.name`.
 
     ```javascript
-    const { controller } = require('material-framework/lib/crud')
+    const { controller } = require('@alancnet/material-framework/lib/crud')
     const { WildBerry } = require('../database')
 
     module.exports = controller({
@@ -98,7 +98,7 @@ overridden, but it is only required to specify one in each case (generally
   - Controllers are exported on the framework library also.
 
     ```javascript
-    const { controllers: C } = require('material-framework/server')
+    const { controllers: C } = require('@alancnet/material-framework/server')
     const wildBerry = require('./wild-berry')
 
     module.exports = Object.assign(C, {
@@ -114,7 +114,7 @@ overridden, but it is only required to specify one in each case (generally
 
     ```javascript
     const C = require('./controllers')
-    const { routes:crudRoutes } = require('material-framework/lib/crud')
+    const { routes:crudRoutes } = require('@alancnet/material-framework/lib/crud')
 
     module.exports = app => {
       crudRoutes({ app, controller: C.wildBerry, camelName: 'wildBerry' })
@@ -129,7 +129,7 @@ overridden, but it is only required to specify one in each case (generally
   - `pages` accept a `layout` property for simple layout definitions. See [TODO: Layout](#layout)
 
     ```javascript
-    const { pages } = require('material-framework/app/crud')
+    const { pages } = require('@alancnet/material-framework/app/crud')
 
     pages({
       camelName: 'wildBerry',
@@ -166,7 +166,7 @@ overridden, but it is only required to specify one in each case (generally
   - This file is loaded before all others because the overrides are used early on in the application lifecycle.
 
     ```javascript
-    const assets = require('material-framework/app/assets')
+    const assets = require('@alancnet/material-framework/app/assets')
     module.exports = Object.assign(assets, {
       wildBerryIcon: require('./wild-berry.svg')
     })
